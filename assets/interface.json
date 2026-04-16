@@ -160,6 +160,30 @@
             "doc": "리세를 종료할 오퍼레이터를 골라주세요.",
             "cases": [
                 {
+                    "name": "은재 (실버애쉬 더 레인프로스트)",
+                    "pipeline_override": {
+                        "Check_Operator_Name_Success": {
+                            "recognition": {
+                                "param": {
+                                    "template": "check/operator/silverash_the_reignfrost.png"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "성녀 (프라마닉스 더 프레리타)",
+                    "pipeline_override": {
+                        "Check_Operator_Name_Success": {
+                            "recognition": {
+                                "param": {
+                                    "template": "check/operator/pramanix_the_prerita.png"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     "name": "토가와 사키코",
                     "pipeline_override": {
                         "Check_Operator_Name_Success": {
