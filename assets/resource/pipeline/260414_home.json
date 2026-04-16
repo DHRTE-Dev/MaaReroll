@@ -1,0 +1,72 @@
+{
+    // 설산강림 이벤트
+    "260414_Reward_10roll_ticket": {
+        "focus": "▶ 설산강림 보상 시작",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "home/260414/260414_ticket.png",
+                "roi": [0, 69, 163, 163],
+                "threshold": 0.95
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {"target": true}
+        },
+        "post_delay": 3000,
+        "next": [
+            "[JumpBack]260414_Popup_10roll_ticket",
+            "Home_Reward_Get_Mail_1"
+        ]
+    },
+    "260414_Popup_10roll_ticket": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "home/260414/260414_ticket_popup.png",
+                "roi": [675, 430, 350, 100],
+                "threshold": 0.85
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {"target": true}
+        },
+        "post_delay": 1500,
+        "next": [
+            "260414_Ticket_Wait_Until_Received"
+        ]
+    },
+    "260414_Ticket_Wait_Until_Received": {
+        "next": [
+            "260414_Ticket_Received",
+            "[JumpBack]260414_Ticket_Tap_Until_Received"
+        ]
+    },
+    "260414_Ticket_Tap_Until_Received": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [555, 521, 1, 1]
+            }
+        }
+    },
+    "260414_Ticket_Received": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "home/260414/260414_ticket_received.png",
+                "roi": [675, 430, 350, 100],
+                "threshold": 0.95
+            }
+        },
+        "post_delay": 1000,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [1251, 104, 1, 1]
+            }
+        }
+    }
+}
